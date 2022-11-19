@@ -1,0 +1,29 @@
+server {
+    listen      80;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen      443 ssl;
+
+    server_name  key.hi17iwai.com;
+    root         /var/www/html;
+    ssl_certificate /etc/letsencrypt/live/key.hi17iwai.com-0001/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/key.hi17iwai.com-0001/privkey.pem; # managed by Certbot
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout  10m;
+
+    index index.html
+    include /etc/nginx/default.d/*.conf;
+
+    location / {
+        try_files $uri $uri/ =404;
+        allow 127.0.0.1;
+        allow 35.233.143.242;
+        allow 10.0.0.0/16;
+
+        allow 202.23.192.0/21; # nit,kc
+        allow 126.59.61.215;    # home (2021/11/22)
+        deny all;
+    }
+}

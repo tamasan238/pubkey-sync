@@ -1,0 +1,2 @@
+/etc/passwd             IN_MODIFY      /root/lsync/incron_file_modified.sh
+/root/private_user.txt  IN_MODIFY      /root/lsync/private_modified.sh

@@ -1,0 +1,1 @@
+1-59/5 * * * * /root/dns/getkeys.sh >/dev/null 2>&1

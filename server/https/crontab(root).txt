@@ -1,0 +1,1 @@
+*/2 * * * * /root/https/collection.sh >/dev/null 2>&1

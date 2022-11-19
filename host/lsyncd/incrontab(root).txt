@@ -1,0 +1,1 @@
+/root/lsync/pubkeys     IN_MODIFY            /root/lsync/getkeys.sh
